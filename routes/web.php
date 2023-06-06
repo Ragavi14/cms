@@ -1,8 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\PagesController;
-use App\Http\Controllers\BlogPostController;
+use App\Http\Controllers\PostController;
+
 
 
 
@@ -24,9 +24,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('postPage', [App\Http\Controllers\HomeController::class, 'post'])->name('postPage');
 
-Route::get('/page', [App\Http\Controllers\PagesController::class, 'index'])->name('page');
-Route::post('/submitform',[App\Http\Controllers\PagesController::class,'submitform'])->name('submitform');
-Route::post('/uploadFile',[App\Http\Controllers\PagesController::class,'uploadFile'])->name('uploadFile');
-
-Route::resource('posts', BlogPostController::class);
+Route::get('post', [App\Http\Controllers\PostController::class, "index"])->name('post');
+Route::get("create-post", [App\Http\Controllers\PostController::class, "createPost"])->name('create-post');
+Route::post('save-post', [App\Http\Controllers\PostController::class, "savePost"])->name('save-post');
+Route::post('uploadFile', [App\Http\Controllers\PostController::class, "uploadFile"])->name('uploadFile');
+Route::delete('destroy-post/{id}',  [App\Http\Controllers\PostController::class, 'destroy'])->name('destroy-post');

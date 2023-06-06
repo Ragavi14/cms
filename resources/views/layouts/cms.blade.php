@@ -54,8 +54,8 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#">CMS</a>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="/page">Home</a>
-                                <a class="dropdown-item" href="/posts">Service</a>
+                                <a class="dropdown-item" href="postPage">Home</a>
+                                <a class="dropdown-item" href="post">Post</a>
                                 <a class="dropdown-item" href="#">About</a>
                             </div>
                         </li>
